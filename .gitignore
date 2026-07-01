@@ -1,0 +1,9 @@
+interdoc_venv/
+__pycache__/
+data/
+
+.vscode
+commands.db
+
+# env variables
+.env
