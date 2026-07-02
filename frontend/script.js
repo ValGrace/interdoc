@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const apiBase = 'https://interdoc.onrender.com/';
+    const apiBase = 'https://interdoc.onrender.com';
     const fileInput = document.getElementById('file-upload');
     const progressContainer = document.getElementById('upload-progress-container');
     const progressBar = document.getElementById('progress-bar');
