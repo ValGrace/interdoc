@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Assistant</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <div class="logo-icon"></div>
+            </div>
+            <nav class="nav-icons">
+                <button class="icon-btn active"><span class="icon-dashboard"></span></button>
+                <button class="icon-btn"><span class="icon-calendar"></span></button>
+                <button class="icon-btn"><span class="icon-grid"></span></button>
+                <button class="icon-btn"><span class="icon-clock"></span></button>
+                <button class="icon-btn"><span class="icon-settings"></span></button>
+            </nav>
+        </aside>
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <div class="dropdown">
+                    <button class="dropdown-btn">Intellidoc 1.0 <span class="arrow">↓</span></button>
+                </div>
+                <div class="header-actions">
+                    <button class="search-btn"><span class="icon-search">⚲</span></button>
+                    <button class="export-btn">↓ Export Chat</button>
+                    <div class="avatar"></div>
+                </div>
+            </header>
+            <!-- Center Section -->
+            <section class="hero-section">
+                <h1>Hello, Stranger</h1>
+                <h2>How Can I Assist You Today?</h2>
+                <!-- Input Box / Upload Area -->
+                <div class="input-container glass-panel">
+                    <input type="text" placeholder="What Would You Like to Explore?" class="main-input" disabled>
+                    
+                    <!-- Upload Progress Area (Hidden by default) -->
+                    <div id="upload-progress-container" class="progress-container hidden">
+                        <div class="progress-info">
+                            <span id="file-name">document.pdf</span>
+                            <span id="progress-text">0%</span>
+                        </div>
+                        <div class="progress-bar-bg">
+                            <div id="progress-bar" class="progress-bar"></div>
+                        </div>
+                    </div>
+                    <div class="input-actions">
+                        <div class="left-actions">
+                            <button class="action-btn outline"><span class="icon">⚛</span> Deep Research</button>
+                            <button class="action-btn icon-only">💡</button>
+                            <button class="action-btn icon-only">⑈</button>
+                        </div>
+                        <div class="right-actions">
+                            <input type="file" id="file-upload" class="hidden-file-input">
+                            <label for="file-upload" class="action-btn outline attach-btn">
+                                🔗 Attach File
+                            </label>
+                            <button class="send-btn">➤</button>
+                        </div>
+                    </div>
+                    <div id="response-panel" class="response-panel hidden">
+                        <div class="response-header">Latest answer</div>
+                        <div id="response-text" class="response-text">Your answer will appear here after a query.</div>
+                    </div>
+                </div>
+                <!-- Cards Area -->
+                <div class="cards-container">
+                    <div class="card glass-panel">
+                        <div class="card-icon">📊</div>
+                        <h3>Synthesize Data</h3>
+                        <p>Turn my meeting notes into 5 key bullet points for the team.</p>
+                    </div>
+                    <div class="card glass-panel">
+                        <div class="card-icon">⚡</div>
+                        <h3>Creative Brainstorm</h3>
+                        <p>Generate 3 taglines for a new sustainable fashion brand.</p>
+                    </div>
+                    <div class="card glass-panel">
+                        <div class="card-icon">🎯</div>
+                        <h3>Check Facts</h3>
+                        <p>Compare key differences between GDPR and CCPA.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <button class="help-btn">?</button>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
