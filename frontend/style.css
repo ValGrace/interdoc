@@ -331,16 +331,63 @@ h2 {
     text-align: left;
     transition: transform 0.3s ease, background 0.3s ease;
     cursor: pointer;
+    position: relative;
 }
 .card:hover {
     transform: translateY(-5px);
     background: rgba(162, 136, 166, 0.2);
+    border-color: transparent; /* hide static border to show glowing border */
 }
+
+/* Animated Border */
+.card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 24px; /* match card border radius */
+    padding: 1.5px; /* very thin but noticeable */
+    
+    background: conic-gradient(
+        from var(--border-angle),
+        transparent 0deg,
+        transparent 270deg,
+        var(--accent-1) 315deg,
+        var(--accent-2) 360deg
+    );
+    
+    -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 10;
+}
+.card:hover::after {
+    opacity: 1;
+    animation: rotate-border 2s linear infinite;
+}
+@keyframes rotate-border {
+    to {
+        --border-angle: 360deg;
+    }
+}
+
 .card-icon {
     font-size: 1.5rem;
     margin-bottom: 16px;
     color: var(--accent-2);
 }
+
+@property --border-angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
 .card h3 {
     font-size: 1.1rem;
     font-weight: 500;
