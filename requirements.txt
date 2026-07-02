@@ -31,7 +31,6 @@ flatbuffers==25.12.19
 frozenlist==1.8.0
 fsspec==2026.6.0
 googleapis-common-protos==1.75.0
-grok==6.2
 grokcore.annotation==5.1
 grokcore.catalog==5.1
 grokcore.chameleon==5.0

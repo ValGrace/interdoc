@@ -5,6 +5,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const progressBar = document.getElementById('progress-bar');
     const progressText = document.getElementById('progress-text');
     const fileNameDisplay = document.getElementById('file-name');
+    const menuToggle = document.getElementById('menu-toggle');
+    const sidebar = document.querySelector('.sidebar');
+    if (menuToggle) {
+        menuToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('active');
+        });
+    }
     const promptInput = document.querySelector('.main-input');
     const sendButton = document.querySelector('.send-btn');
 

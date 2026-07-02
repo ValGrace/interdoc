@@ -106,6 +106,20 @@ body {
     cursor: pointer;
     backdrop-filter: blur(5px);
 }
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.hamburger-btn {
+    display: none; /* Hidden on desktop */
+    background: transparent;
+    border: none;
+    color: var(--text-light);
+    font-size: 24px;
+    cursor: pointer;
+}
 .header-actions {
     display: flex;
     align-items: center;
@@ -320,6 +334,7 @@ h2 {
 /* Cards Area */
 .cards-container {
     display: flex;
+    flex-wrap: wrap; 
     gap: 20px;
     width: 100%;
     max-width: 900px;
@@ -430,3 +445,55 @@ h2 {
 }
 .icon-dashboard { border-radius: 50%; }
 .icon-grid { border-style: dashed; }
+
+@media (max-width: 768px) {
+    .sidebar {
+        position: fixed;
+        left: 0;
+        top: 0;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        background: rgba(28, 29, 33, 0.95);
+        border-right: 1px solid var(--glass-border);
+    }
+    .sidebar.active {
+        transform: translateX(0);
+    }
+    .hamburger-btn {
+        display: block; /* Show hamburger on mobile */
+    }
+    .main-content {
+        padding: 16px;
+    }
+    .hero-section {
+        margin-top: 20px;
+    }
+    h1 {
+        font-size: 1.5rem;
+    }
+    h2 {
+        font-size: 2rem;
+        margin-bottom: 24px;
+    }
+    .input-actions {
+        flex-direction: column;
+        gap: 16px;
+    }
+    .left-actions, .right-actions {
+        width: 100%;
+        justify-content: space-between;
+    }
+    .action-btn {
+        font-size: 0.8rem;
+        padding: 6px 12px;
+    }
+    .send-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 1rem;
+    }
+    
+    .card {
+        min-width: 100%;
+    }
+}
